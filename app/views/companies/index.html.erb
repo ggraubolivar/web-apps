@@ -1,0 +1,17 @@
+
+<% companies = Company.all %>
+
+<h1>COMPANIES</h1>
+<p>Here is a list of our corporate clients in our CRM software database, as of:</p>
+
+<% for company in companies
+      name = company["name"]
+      city = company["city"]
+      state = company["state"]
+      %>
+
+<ul>
+  <li> <strong><%= "#{name} "%> </strong> <%="- #{city}, #{state}" %> </li>
+</ul>
+
+<% end %>

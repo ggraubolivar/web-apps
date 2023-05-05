@@ -1,0 +1,22 @@
+<% contacts = Contact.all %>
+
+<h1>CONTACTS</h1>
+<p>Here is a list of our direct clients in our CRM software database, as of:</p>
+
+<% 
+  for contact in contacts
+      fname = contact["first_name"]
+      lname = contact["last_name"]
+      email = contact["email"]
+      phone = contact["phone_number"]
+  %>
+      <% 
+        company = Company.find_by({"id" => contact["company_id"]})
+        cname = company["name"]
+       %>
+
+<ul>
+  <li> <%= "#{fname} #{lname} [#{cname}] (Email: #{email}, Mobile: #{phone})" %> </li>
+</ul>
+
+<% end %>

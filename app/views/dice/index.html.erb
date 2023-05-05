@@ -1,23 +1,39 @@
 <h1>Roll the Dice!</h1>
 
 <% 
+
   d1 = rand(1..6) 
   d2 = rand(1..6)
   sum = d1 + d2
 
-  if sum > 9
+  # if (sum == 7 | sum == 11)
+  #   message = "You win!"
+  # elsif (sum == 2 | sum == 3 | sum == 12)
+  #   message  = "You lose!"
+  # else
+  #   message = "You get a point!"
+  # end
+
+  
+  if sum == 7
     message = "You win!"
-  elsif sum < 6
-    message  = "It is a draw!"
+  elsif sum == 11
+    message = "You win!"
+  elsif sum == 2 
+    message  = "You lose!"
+  elsif sum == 3
+    message  = "You lose!"
+  elsif sum == 12
+    message  = "You lose!"
   else
-    message = "You lose!"
+    message = "You get a point!"
   end
 
  %>
 
 <p>
-  <img src = "public/images/dice/<%=d1%>.svg">
-  <img src = "public/images/dice/<%=d2%>.svg">
+  <img src = "images/dice/<%=d1%>.svg">
+  <img src = "images/dice/<%=d2%>.svg">
 </p>
 
 <p>
@@ -30,6 +46,7 @@
   <li> <%= "Dice 2: #{d2}"%> </li>
   <li> <%= "-------------"%> </li>
   <li> <%= "Sum of Dice: #{sum}"%> </li>
+  <li> <%= "Points: 0"%> </li>
 </ul>
 <p> <%= "#{message}" %> </p>
 
