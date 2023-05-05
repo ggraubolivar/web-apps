@@ -1,0 +1,35 @@
+<h1>Roll the Dice!</h1>
+
+<% 
+  d1 = rand(1..6) 
+  d2 = rand(1..6)
+  sum = d1 + d2
+
+  if sum > 9
+    message = "You win!"
+  elsif sum < 6
+    message  = "It is a draw!"
+  else
+    message = "You lose!"
+  end
+
+ %>
+
+<p>
+  <img src = "public/images/dice/<%=d1%>.svg">
+  <img src = "public/images/dice/<%=d2%>.svg">
+</p>
+
+<p>
+  <a href = "/dice">Roll Again!</a>
+</p>
+
+<p>Player 1's Game!</p>
+<ul>
+  <li> <%= "Dice 1: #{d1}"%> </li>
+  <li> <%= "Dice 2: #{d2}"%> </li>
+  <li> <%= "-------------"%> </li>
+  <li> <%= "Sum of Dice: #{sum}"%> </li>
+</ul>
+<p> <%= "#{message}" %> </p>
+

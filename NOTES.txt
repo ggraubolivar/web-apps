@@ -1,0 +1,5 @@
+(1) We need to first finish all creations of classes and migrations (rails db:migrate)
+(2) We can then [rails server] to access Ruby on Rails server.
+(3) We can generate an app resource/path called "tacos" [rails generate resource tacos]
+    - It will modify the locales/routes.rb file 
+    - This will create 
